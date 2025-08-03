@@ -1,62 +1,67 @@
-# 🛡️ Insurance Fraud Detection – MLOps Pipeline
+# Insurance Fraud Detection – MLOps Pipeline
 
-An end-to-end MLOps project built for detecting fraudulent insurance claims using a real-world dataset. This pipeline automates data ingestion, training, tracking, monitoring, and deployment using best practices in machine learning operations.
+An end-to-end MLOps project built for detecting fraudulent vehicle insurance claims using a real-world dataset. This pipeline automates data ingestion, preprocessing, training, experiment tracking, monitoring, and deployment — following production-grade machine learning operational best practices.
 
 > Designed & implemented by [Jeevithesh CV](https://github.com/JeevitheshCV)
 
 ---
 
-## 📸 Project Overview
+## Project Overview
 
 ![MLOps Canvas](/project_info/mlops_canvas.png)
 
----
-
-## 🚀 Project Highlights
-
-- ✅ Automated ML pipeline with **Prefect** orchestration
-- ✅ Containerized deployment with **Docker & Compose**
-- ✅ Model tracking using **MLflow**
-- ✅ Real-time batch predictions via **FastAPI**
-- ✅ Monitoring dashboards using **Evidently**, **Grafana**, and **SHAP**
-- ✅ Cloud-native support for **GCP storage & VMs**
+A complete view of the problem definition, value proposition, model strategy, and deployment lifecycle for detecting insurance fraud.
 
 ---
 
-## 🎯 Motivation
+## Project Highlights
 
-Insurance fraud costs companies millions annually. Automating the detection process can improve scalability, reduce losses, and prioritize investigations.  
-This project simulates a real-world MLOps pipeline with:
-
-- Scheduled data flows
-- Model experimentation & tracking
-- Scalable inference
-- Production monitoring
+- Fully containerized ML system with **Docker & Compose**
+- Automated batch predictions with **Prefect**
+- Experiment tracking with **MLflow**
+- Monitoring via **Evidently**, **SHAP**, and **Grafana**
+- Live FastAPI service to expose model predictions
+- Designed for **cloud compatibility** (GCS + GCP VM)
 
 ---
 
-## 🧩 Pipeline Architecture
+## Motivation
+
+Fraudulent insurance claims cause significant financial losses and reputational damage. Manual fraud detection lacks scale and objectivity.
+
+This project builds a realistic fraud detection workflow for insurance claims using:
+
+- A real-world dataset
+- Automated data pipelines
+- Model lifecycle tracking
+- Explainable monitoring
+- Streamlined deployment & serving
+
+---
+
+## Pipeline Architecture
 
 ![Project Diagram](/project_info/project_diagram.png)
 
----
-
-## 🧰 Tech Stack
-
-| Component       | Tool / Service                          |
-|----------------|------------------------------------------|
-| Data Source     | [Kaggle Dataset](https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection) |
-| Data Lake       | Google Cloud Storage (GCS)              |
-| Data Mart       | PostgreSQL + pgAdmin                    |
-| Orchestration   | Prefect (Cloud)                         |
-| Experimentation | MLflow (on GCP VM)                      |
-| Serving         | FastAPI                                 |
-| Monitoring      | Evidently · SHAP · Grafana              |
-| Deployment      | Docker · Makefile · `.env`              |
+> **Stages**: Data ingestion → Preprocessing → Model training → Batch prediction → Monitoring & serving
 
 ---
 
-## 📁 Folder Structure
+## Tech Stack
+
+| Category         | Tools & Services                                |
+|------------------|--------------------------------------------------|
+| **Data Source**   | [Kaggle Dataset](https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection) |
+| **Storage**       | Google Cloud Storage (GCS), PostgreSQL          |
+| **Workflow Engine** | Prefect Cloud & CLI                          |
+| **Model Tracking** | MLflow (hosted on GCP VM)                      |
+| **Monitoring**    | Evidently, SHAP, Streamlit, Grafana             |
+| **Serving**       | FastAPI (batch API)                             |
+| **Infra/DevOps**  | Docker, Makefile, `.env`, Pre-commit Hooks      |
+
+---
+
+## Folder Structure
 
 <details>
 <summary>Click to expand</summary>
@@ -64,18 +69,19 @@ This project simulates a real-world MLOps pipeline with:
 ```bash
 fraud-detection-mlops/
 ├── src/                     # Source code
-│   ├── data/                # Preprocessing scripts
-│   ├── model/               # Batch inference logic
-│   └── api/                 # FastAPI app
+│   ├── data/                # Preprocessing logic
+│   ├── model/               # Batch prediction logic
+│   └── api/                 # FastAPI service
 │
 ├── orchestration/          # Prefect flows
-├── notebooks/              # EDA & feature analysis
-├── monitoring/             # SHAP plots & Evidently HTMLs
-├── mlflow/                 # Tracking configs
-├── postgres/               # SQL schemas
-├── docker/                 # Docker & Compose setup
-├── config/                 # .env templates
-├── .devtools/              # Linters, pre-commit
+├── notebooks/              # EDA, feature engineering
+├── monitoring/             # SHAP images, Evidently HTMLs
+├── mlflow/                 # Tracking configs & docs
+├── postgres/               # SQL schema, commands
+├── docker/                 # Dockerfiles, compose setup
+├── config/                 # Environment variables
+├── .devtools/              # Pre-commit, linting
+├── project_info/           # Visuals & diagrams
 ├── Makefile
 ├── requirements.txt
 └── README.md
