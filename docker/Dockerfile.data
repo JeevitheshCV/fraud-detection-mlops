@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+
+WORKDIR /usr/src/app
+
+RUN pip install google-auth google-cloud-storage pandas sqlalchemy psycopg2-binary
+
+COPY monitoring .
+COPY my-creds.json .
